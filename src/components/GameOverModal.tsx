@@ -87,7 +87,7 @@ const GameOverModal = ({
 							transition-colors duration-100"
 					onClick={() => {
 						navigator.clipboard.writeText(
-							`HexGuess ${guessCount}/${guessLimit}\n\n${resultString}`
+							`HexGuess ${guessCount}/${guessLimit}\nhttps://hex-guess.vercel.app/\n\n${resultString}`
 						);
 						handleCopy();
 					}}

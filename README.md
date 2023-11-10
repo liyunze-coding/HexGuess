@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# HexGuess
+
+![Vercel Badge](https://img.shields.io/badge/Vercel-000?logo=vercel&logoColor=fff&style=flat)
+![Next.js Badge](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff&style=flat)
+![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat)
+![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=flat)
+![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
+
+## How to Play
+
+1. **Guess the Code:** Input your hexadecimal guess for the color.
+2. **Receive Feedback:** Instantly know if each character is correct, too high, or too low.
+3. **Crack the Code:** Utilize the feedback to refine your guesses and decode the color within 5 attempts.
 
 ## Getting Started
 
-First, run the development server:
+To run HexGuess locally, follow these steps:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/liyunze-coding/HexGuess.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the project in your preferred code editor.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Launch the game and start decoding colors!
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Issues and Feedback
 
-## Learn More
+Encountering issues or have suggestions? [Open an issue](https://github.com/liyunze-coding/HexGuess/issues).
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Acknowledgments
 
-## Deploy on Vercel
+- HexGuess draws inspiration from the [Hexcodle](https://hexcodle.com) game.
+- Special thanks to the open-source community for their valuable contributions.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Enjoy the HexGuess experience!

@@ -175,7 +175,7 @@ export default function HexCodle() {
 			<div className="w-full bg-white text-black rounded-xl px-0 md:px-10 py-8 text-center">
 				<div className="w-full flex flex-row justify-center items-center">
 					<div className="flex flex-col w-1/3">
-						<h2 className="text-center font-bold text-xl">
+						<h2 className="text-center font-bold sm:text-xl">
 							Target
 						</h2>
 						<div
@@ -184,7 +184,7 @@ export default function HexCodle() {
 						></div>
 					</div>
 					<div className="flex flex-col w-1/3 ml-5">
-						<h2 className="text-center font-bold text-xl">
+						<h2 className="text-center font-bold sm:text-xl">
 							Your Guess
 						</h2>
 						<div
@@ -254,7 +254,7 @@ export default function HexCodle() {
 					)}
 				</div>
 			</div>
-			<div className="w-full bg-white text-black rounded-xl px-10 py-8 text-center mt-5">
+			<div className="w-full bg-white text-black rounded-xl px-0 sm:px-10 py-8 text-center mt-5 overflow-visible">
 				<h1 className="font-bold text-xl mb-3">Guesses</h1>
 				<div className="w-full flex flex-col-reverse justify-start font-['Roboto_Mono',_monospace]">
 					{guesses.length === 0 && "Guesses will appear here!"}
@@ -275,8 +275,8 @@ export default function HexCodle() {
 											<div
 												key={resultIndex}
 												className="flex flex-col justify-start
-											rounded-xl border-4 border-solid px-3 py-2
-											mx-2 scale"
+											rounded-xl border-4 border-solid px-1 md:px-3 py-1 md:py-2
+											mx-1 md:mx-2 scale"
 												style={{
 													borderColor:
 														guesses[
@@ -296,7 +296,7 @@ export default function HexCodle() {
 															: "0px",
 												}}
 											>
-												<span className="text-xl">
+												<span className="md:text-xl">
 													{char}
 												</span>
 												<span>

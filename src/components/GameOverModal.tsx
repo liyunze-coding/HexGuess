@@ -82,7 +82,7 @@ const GameOverModal = ({
 				</p>
 				<button
 					className="border border-solid border-black 
-							rounded-xl px-5 py-2 w-fit 
+							rounded-xl px-5 py-2
 							hover:bg-black hover:text-white
 							transition-colors duration-100"
 					onClick={() => {
@@ -92,21 +92,8 @@ const GameOverModal = ({
 						handleCopy();
 					}}
 				>
-					&#128203; Copy to Clipboard!
+					{copied ? "Copied!" : `📋 Copy to Clipboard!`}
 				</button>
-			</div>
-			<div className="relative">
-				<div
-					className="absolute -bottom-12 left-1/2 opacity-0 transition-all duration-500 px-2 py-1 rounded-md bg-gray-100"
-					style={{
-						transform: copied
-							? "translateX(-50%)"
-							: "translateX(-50%) translateY(2rem)",
-						opacity: copied ? 100 : 0,
-					}}
-				>
-					Copied!
-				</div>
 			</div>
 		</Modal>
 	);

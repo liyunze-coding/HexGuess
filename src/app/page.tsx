@@ -13,7 +13,7 @@ const HexGuess = dynamic(() => import("../components/HexGuess"), {
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center py-20 px-5 lg:px-0">
+		<main className="flex min-h-screen flex-col items-center py-20 px-1 md:px-5 lg:px-0">
 			<div className="max-w-7xl flex flex-col items-center">
 				<div className="w-full md:2/3 lg:w-1/2">
 					<Information />

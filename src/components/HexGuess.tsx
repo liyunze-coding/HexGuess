@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import GameOverModal from "./GameOverModal";
+import ShareAltOutlined from "@ant-design/icons/ShareAltOutlined";
 
 export default function HexCodle() {
 	const acceptableHexChars: string[] = [
@@ -225,8 +226,21 @@ export default function HexCodle() {
 									: "pointer",
 							}}
 						/>
+						{/* share button */}
+						{gameOver && (
+							<button
+								className="bg-blue-500 hover:bg-blue-400 text-white 
+										rounded-xl px-4 py-2 mr-2 
+										transition-colors duration-100
+										ml-1"
+								onClick={showGameOverModal}
+							>
+								<ShareAltOutlined />
+							</button>
+						)}
 					</form>
 				</div>
+
 				<div className="flex flex-col justify-center items-center">
 					{!gameOver && (
 						<span

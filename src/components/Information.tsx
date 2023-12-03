@@ -33,20 +33,32 @@ export default function Information() {
 			</p>
 			<div className="flex flex-col sm:flex-row flex-wrap w-full justify-center items-center mt-5 gap-y-1">
 				<button
-					className="bg-blue-500 hover:bg-blue-400 text-white px-2 py-2 rounded-lg mx-2 whitespace-nowrap"
+					className="bg-blue-600 text-white
+					hover:text-blue-600 hover:bg-white
+					transition-colors duration-150
+					border border-solid border-blue-600
+					px-2 py-2 rounded-lg mx-2 whitespace-nowrap"
 					onClick={showInfoModal}
 				>
 					WHAT IS HEX?
 				</button>
 				<div className="flex flex-row">
 					<button
-						className="bg-blue-500 hover:bg-blue-400 text-white px-2 py-2 rounded-lg mx-2"
+						className="bg-blue-600 text-white
+						hover:text-blue-600 hover:bg-white
+						transition-colors duration-150
+						border border-solid border-blue-600
+						px-2 py-2 rounded-lg mx-2"
 						onClick={showRulesModal}
 					>
 						RULES
 					</button>
 					<button
-						className="bg-blue-500 hover:bg-blue-400 text-white px-2 py-2 rounded-lg mx-2"
+						className="bg-blue-600 text-white
+						hover:text-blue-600 hover:bg-white
+						transition-colors duration-150
+						border border-solid border-blue-600
+						px-2 py-2 rounded-lg mx-2"
 						onClick={showCreditsModal}
 					>
 						CREDITS

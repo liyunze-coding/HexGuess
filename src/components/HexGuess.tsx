@@ -219,7 +219,12 @@ export default function HexCodle() {
 						<input
 							type="submit"
 							value="Guess!"
-							className="bg-green-500 hover:bg-green-400 text-white rounded-xl px-5 py-2 ml-2 transition-colors duration-100"
+							className="bg-green-600 text-white 
+							hover:bg-white hover:text-green-600
+							border border-solid border-green-600
+							rounded-xl 
+							px-5 py-2 ml-2 
+							transition-colors duration-100"
 							style={{
 								cursor: gameOver
 									? "not-allowed"
@@ -260,7 +265,7 @@ export default function HexCodle() {
 					{gameOver && (
 						// on hover, make it greener
 						<button
-							className="bg-green-500 hover:bg-green-400 text-white rounded-xl px-5 py-2 mt-5 w-1/2 transition-colors duration-100"
+							className="bg-green-600 hover:bg-green-500 text-white rounded-xl px-5 py-2 mt-5 w-1/2 transition-colors duration-100"
 							onClick={() => newGame()}
 						>
 							Play Again

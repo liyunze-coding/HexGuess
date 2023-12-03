@@ -200,6 +200,7 @@ export default function HexCodle() {
 					<form
 						className="flex flex-row justify-center w-full mt-5"
 						onSubmit={handleSubmit}
+						role="form"
 					>
 						<input
 							type="text"
@@ -215,13 +216,15 @@ export default function HexCodle() {
 									? "none"
 									: "auto",
 							}}
+							aria-label="Input field for guessing hex value"
+							tabIndex={0}
 						/>
 						<input
 							type="submit"
 							value="Guess!"
-							className="bg-green-600 text-white 
-							hover:bg-white hover:text-green-600
-							border border-solid border-green-600
+							className="bg-green-700 text-white 
+							hover:bg-white hover:text-green-700
+							border border-solid border-green-700
 							rounded-xl 
 							px-5 py-2 ml-2 
 							transition-colors duration-100"
@@ -230,6 +233,8 @@ export default function HexCodle() {
 									? "not-allowed"
 									: "pointer",
 							}}
+							aria-label="Submit button for guessing"
+							tabIndex={1}
 						/>
 						{/* share button */}
 						{gameOver && (
@@ -239,8 +244,10 @@ export default function HexCodle() {
 										transition-colors duration-100
 										ml-1"
 								onClick={showGameOverModal}
+								aria-label="Share game result"
+								tabIndex={2}
 							>
-								<ShareAltOutlined />
+								<ShareAltOutlined alt="Share icon" />
 							</button>
 						)}
 					</form>

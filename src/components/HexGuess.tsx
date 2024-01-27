@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import GameOverModal from "./GameOverModal";
 import ShareAltOutlined from "@ant-design/icons/ShareAltOutlined";
+import GradientBg from "./GradientBg";
 
 export default function HexCodle() {
 	const acceptableHexChars: string[] = [
@@ -79,8 +80,7 @@ export default function HexCodle() {
 	const [guessCount, setGuessCount] = useState<number>(0); // 5 guesses
 	const [gameOver, setGameOver] = useState<boolean>(false);
 	const [gameWon, setGameWon] = useState<boolean>(false); // if guess is correct, set to true
-	const [isGameOverModalVisible, setIsGameOverModalVisible] =
-		useState(false);
+	const [isGameOverModalVisible, setIsGameOverModalVisible] = useState(false);
 	const [resultString, setResultString] = useState<string>("");
 
 	const showGameOverModal = () => {
@@ -162,6 +162,7 @@ export default function HexCodle() {
 
 	return (
 		<div className="w-full flex flex-col justify-center items-center mt-10">
+			<GradientBg />
 			<GameOverModal
 				isOpen={isGameOverModalVisible}
 				setIsOpen={setIsGameOverModalVisible}
@@ -173,6 +174,7 @@ export default function HexCodle() {
 				guessLimit={guessLimit}
 				resultString={resultString}
 			/>
+
 			<div className="w-full bg-white text-black rounded-xl px-0 md:px-10 py-8 text-center">
 				<div className="w-full flex flex-row justify-center items-center">
 					<div className="flex flex-col w-1/3">
@@ -209,12 +211,8 @@ export default function HexCodle() {
 							value={inputValue}
 							onChange={(e) => handleInputChange(e)}
 							style={{
-								cursor: gameOver
-									? "not-allowed"
-									: "text",
-								pointerEvents: gameOver
-									? "none"
-									: "auto",
+								cursor: gameOver ? "not-allowed" : "text",
+								pointerEvents: gameOver ? "none" : "auto",
 							}}
 							aria-label="Input field for guessing hex value"
 							tabIndex={0}
@@ -229,9 +227,7 @@ export default function HexCodle() {
 							px-5 py-2 ml-2 
 							transition-colors duration-100"
 							style={{
-								cursor: gameOver
-									? "not-allowed"
-									: "pointer",
+								cursor: gameOver ? "not-allowed" : "pointer",
 							}}
 							aria-label="Submit button for guessing"
 							tabIndex={1}
@@ -266,8 +262,7 @@ export default function HexCodle() {
 							{guessCount !== 0 && " left"}!
 						</span>
 					)}
-					{gameOver &&
-						(gameWon ? "You guessed it!" : "You lost :(")}
+					{gameOver && (gameWon ? "You guessed it!" : "You lost :(")}
 
 					{gameOver && (
 						// on hover, make it greener
@@ -290,53 +285,45 @@ export default function HexCodle() {
 								className="flex flex-row justify-center mb-2"
 								key={guessIndex}
 							>
-								{guess
-									.split("")
-									.map((char, resultIndex) => {
-										if (char === "#") {
-											return;
-										}
+								{guess.split("").map((char, resultIndex) => {
+									if (char === "#") {
+										return;
+									}
 
-										return (
-											<div
-												key={resultIndex}
-												className="flex flex-col justify-start
+									return (
+										<div
+											key={resultIndex}
+											className="flex flex-col justify-start
 											rounded-xl border-4 border-solid px-1 md:px-3 py-1 md:py-2
 											mx-1 md:mx-2 scale"
-												style={{
-													borderColor:
-														guesses[
-															guessIndex
-														],
-													transform:
-														guessIndex ===
-														guessCount -
-															1
-															? "scale(1.2)"
-															: "scale(1)",
-													marginBottom:
-														guessIndex ===
-														guessCount -
-															1
-															? "10px"
-															: "0px",
-												}}
-											>
-												<span className="md:text-xl">
-													{char}
-												</span>
-												<span>
-													{
-														guessResults[
-															guessIndex
-														][
-															resultIndex
-														]
-													}
-												</span>
-											</div>
-										);
-									})}
+											style={{
+												borderColor:
+													guesses[guessIndex],
+												transform:
+													guessIndex ===
+													guessCount - 1
+														? "scale(1.2)"
+														: "scale(1)",
+												marginBottom:
+													guessIndex ===
+													guessCount - 1
+														? "10px"
+														: "0px",
+											}}
+										>
+											<span className="md:text-xl">
+												{char}
+											</span>
+											<span>
+												{
+													guessResults[guessIndex][
+														resultIndex
+													]
+												}
+											</span>
+										</div>
+									);
+								})}
 							</div>
 						);
 					})}

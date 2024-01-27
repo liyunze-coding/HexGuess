@@ -1,5 +1,5 @@
 export default function GradientBg() {
-	var colors = [
+	const colors = [
 		[62, 35, 255],
 		[60, 255, 60],
 		[255, 35, 98],
@@ -8,46 +8,35 @@ export default function GradientBg() {
 		[255, 128, 0],
 	];
 
-	var step = 0;
-	// color table indices for:
-	// current color left
-	// next color left
-	// current color right
-	// next color right
-	var colorIndices = [0, 1, 2, 3];
+	const alpha = 1.0;
 
-	// transition speed
-	var gradientSpeed = 0.002;
+	let step = 0;
+	let colorIndices = Array.from({ length: colors.length }, (_, i) => i);
+	const gradientSpeed = 0.0009;
 
 	function updateGradient() {
-		var gradientElement = document.getElementById("gradient");
+		let gradientElement = document.getElementById("gradient");
 
 		if (!gradientElement) return;
 
-		var c0_0 = colors[colorIndices[0]];
-		var c0_1 = colors[colorIndices[1]];
-		var c1_0 = colors[colorIndices[2]];
-		var c1_1 = colors[colorIndices[3]];
+		const c0_0 = colors[colorIndices[0]];
+		const c0_1 = colors[colorIndices[1]];
+		const c1_0 = colors[colorIndices[2]];
+		const c1_1 = colors[colorIndices[3]];
 
-		var istep = 1 - step;
-		var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
-		var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
-		var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
-		var color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
+		const istep = 1 - step;
+		const r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+		const g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+		const b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+		const color1 = `rgba(${r1},${g1},${b1},${alpha})`;
 
-		var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
-		var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
-		var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
-		var color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
+		const r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+		const g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+		const b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+		const color2 = `rgba(${r2},${g2},${b2},${alpha})`;
 
-		gradientElement.style.background =
-			"linear-gradient(to right, " + color1 + ", " + color2 + ")";
-		gradientElement.style.background =
-			"-moz-linear-gradient(left, " +
-			color1 +
-			" 0%, " +
-			color2 +
-			" 100%)";
+		gradientElement.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+		gradientElement.style.background = `-moz-linear-gradient(left, ${color1} 0%, ${color2} 100%)`;
 
 		step += gradientSpeed;
 		if (step >= 1) {
@@ -55,8 +44,6 @@ export default function GradientBg() {
 			colorIndices[0] = colorIndices[1];
 			colorIndices[2] = colorIndices[3];
 
-			// pick two new target color indices
-			// do not pick the same as the current one
 			colorIndices[1] =
 				(colorIndices[1] +
 					Math.floor(1 + Math.random() * (colors.length - 1))) %

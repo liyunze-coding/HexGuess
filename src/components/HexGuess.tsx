@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import GameOverModal from "./GameOverModal";
 import ShareAltOutlined from "@ant-design/icons/ShareAltOutlined";
-import GradientBg from "./GradientBg";
 
 export default function HexCodle() {
 	const acceptableHexChars: string[] = [
@@ -162,7 +161,6 @@ export default function HexCodle() {
 
 	return (
 		<div className="w-full flex flex-col justify-center items-center mt-10">
-			<GradientBg />
 			<GameOverModal
 				isOpen={isGameOverModalVisible}
 				setIsOpen={setIsGameOverModalVisible}

@@ -60,3 +60,12 @@ sonar-scanner.zip
 *.db
 
 # Add more patterns based on the find-large-files.js output
+.git
+node_modules
+.next
+out
+build 
+dist
+.vercel
+dependency-check
+sonar-scanner

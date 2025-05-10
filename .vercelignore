@@ -44,3 +44,19 @@ sonar-scanner.zip
 *.zip
 *.tar.gz
 *.tgz
+
+# Common large media files
+*.mp4
+*.mov
+*.avi
+*.webm
+*.psd
+*.ai
+*.sketch
+
+# Large data files
+*.csv
+*.sqlite
+*.db
+
+# Add more patterns based on the find-large-files.js output

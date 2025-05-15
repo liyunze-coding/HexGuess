@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import GameOverModal from "./GameOverModal";
 import ShareAltOutlined from "@ant-design/icons/ShareAltOutlined";
 
-export default function HexCodle() {
+export default function HexCodle({ initialColor }: { initialColor?: [string, string] }) {
 	const acceptableHexChars: string[] = [
 		"0",
 		"1",
@@ -25,7 +25,7 @@ export default function HexCodle() {
 	];
 
 	// returns RGB and hex value
-	const generateColor = () => {
+	const generateColor = (): [string, string] => {
 		const hex = Math.floor(Math.random() * 16777215)
 			.toString(16)
 			.toUpperCase()
@@ -70,7 +70,9 @@ export default function HexCodle() {
 		return resultArray;
 	};
 
-	const [color, setColor] = useState(generateColor());
+	const [color, setColor] = useState<[string, string]>(
+        initialColor ?? generateColor()
+    );
 	const [guessedColor, setGuessedColor] = useState("");
 	const [inputValue, setInputValue] = useState("#");
 	const [guesses, setGuesses] = useState<string[]>([]);
@@ -203,6 +205,7 @@ export default function HexCodle() {
 						role="form"
 					>
 						<input
+							id="textInput"
 							type="text"
 							className="w-[6.5em] border border-black border-solid rounded-md px-3 py-2 font-[Roboto_Mono,_monospace] text-xl"
 							maxLength={7}
@@ -216,6 +219,7 @@ export default function HexCodle() {
 							tabIndex={0}
 						/>
 						<input
+							id="submitButton"
 							type="submit"
 							value="Guess!"
 							className="bg-green-700 text-white 

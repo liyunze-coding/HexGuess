@@ -57,7 +57,7 @@ test('Show congrats screen when guessed correctly', async () => {
     expect(screen.getByText(/Congrats!/i)).toBeInTheDocument();
 });
 
-test('Show congrats screen when guessed correctly', async () => {
+test('Show Game Over when use up 5 tries', async () => {
     // Example: Red (#FF0000)
 
     render(<HexCodle initialColor={['rgb(255,0,0)', '#FF0000']} />);

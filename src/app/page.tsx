@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import Information from "@/components/Information";
 import GradientBg from "@/components/GradientBg";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 // replace with <p>Loading...</p>
 const HexGuess = dynamic(() => import("../components/HexGuess"), {

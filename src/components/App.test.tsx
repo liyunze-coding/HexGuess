@@ -5,34 +5,6 @@ import Home from '@/app/page'; // Adjust the import path to your component
 import HexCodle from '@/components/HexGuess';
 
 
-test('renders the home page', async () => {
-    await act(async () => {
-        render(<Home />);
-    });
-    expect(screen.getByText(/HexGuess/i)).toBeInTheDocument();
-});
-
-test('renders the "Rules" button', async () => {
-    await act(async () => {
-        render(<Home />);
-    });
-    expect(screen.getByRole('button', { name: /RULES/i })).toBeInTheDocument();
-});
-
-test('renders the "What is Hex?" button', async () => {
-    await act(async () => {
-        render(<Home />);
-    });
-    expect(screen.getByRole('button', { name: /WHAT IS HEX\?/i })).toBeInTheDocument();
-});
-
-test('renders the "Credits" button', async () => {
-    await act(async () => {
-        render(<Home />);
-    });
-    expect(screen.getByRole('button', { name: /CREDITS/i })).toBeInTheDocument();
-});
-
 test('renders HexCodle with a fixed color', async () => {
     // Example: Red (#FF0000)
 

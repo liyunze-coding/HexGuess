@@ -9,7 +9,7 @@
 
 ## How to Play
 
-1. Go to https://hex-guess.vercel.app/
+1. Go to https://hexguess.vercel.app/
 
 1. **Guess the Code:** Input your hexadecimal guess for the color.
 2. **Receive Feedback:** Instantly know if each character is correct, too high, or too low.

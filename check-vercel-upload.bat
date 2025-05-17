@@ -1,3 +1,0 @@
-@echo off
-echo Running Vercel in debug mode to see what files are being uploaded...
-vercel --debug --token %VERCEL_TOKEN% deploy --dry-run
